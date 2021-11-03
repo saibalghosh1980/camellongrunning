@@ -35,6 +35,11 @@
 			<artifactId>camel-timer-starter</artifactId>
 			<version>3.12.0</version>
 		</dependency>
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>5.2</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
