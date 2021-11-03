@@ -12,8 +12,6 @@ public class LongRunningRoute extends RouteBuilder{
 
     @Override
     public void configure() throws Exception {
-        interceptSendToEndpoint("*").log(LoggingLevel.INFO, org.slf4j.LoggerFactory.getLogger(this.getClass()),"OUTGOING :: RouteID :: ${routeId}\nMessageID ::${id}\nHeaders ::${headers}\nBODY ::${body}");
-        interceptFrom("*").log(LoggingLevel.INFO, org.slf4j.LoggerFactory.getLogger(this.getClass()),"INCOMING :: RouteID :: ${routeId}\nMessageID ::${id}\nHeaders ::${headers}\nBODY ::${body}");
         
         // TODO Auto-generated method stub
         from("timer://foo?repeatCount=1").routeId("id_SampleRoute")
