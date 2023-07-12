@@ -3,3 +3,7 @@ logging:
     '[org.apache]': DEBUG
     '[org.apache.camel.component.http]': TRACE
     '[org.apache.camel.http]': TRACE
+camel:
+  component:
+    http:
+      connection-time-to-live: 20000
