@@ -11,16 +11,18 @@ public class LongRunningRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
+
        
         // TODO Auto-generated method stub
-        from("timer://foo?repeatCount=1").routeId("id_SampleRoute")
+        from("timer://foo?fixedRate=true&period=900000").routeId("id_SampleRoute")
                 .log(LoggingLevel.INFO, log, "Timer Route Started")
                 //.delay(120000)
-                .wireTap("direct:dummy")
+                //.wireTap("direct:dummy")
                 .to("direct:dummy");
 
         from("direct:dummy")
-                .log(LoggingLevel.INFO, log, "Second route");
+                .to("https://reqres.in/api/users/2")
+                .log(LoggingLevel.INFO, log, "${body}");
 
     }
 
