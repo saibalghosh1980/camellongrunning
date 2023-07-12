@@ -20,7 +20,7 @@ public class LongRunningRoute extends RouteBuilder {
 
                 .end();
         // TODO Auto-generated method stub
-        from("timer://foo?fixedRate=true&period=900000").routeId("id_SampleRoute")
+        from("timer://foo?fixedRate=true&period=300000").routeId("id_SampleRoute")
                 .log(LoggingLevel.INFO, log, "Timer Route Started")
                 //.delay(120000)
                 //.wireTap("direct:dummy")
