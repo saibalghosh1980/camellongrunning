@@ -1,9 +1,9 @@
-logging:
-  level:
-    '[org.apache]': DEBUG
-    '[org.apache.camel.component.http]': TRACE
-    '[org.apache.camel.http]': TRACE
+#logging:
+#  level:
+#    '[org.apache]': DEBUG
+#    '[org.apache.camel.component.http]': TRACE
+#    '[org.apache.camel.http]': TRACE
 camel:
   component:
     http:
-      connection-time-to-live: 20000
+      connection-time-to-live: 5000
