@@ -12,7 +12,13 @@ public class LongRunningRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-       
+        onException(Exception.class).useOriginalMessage()
+
+                .log(LoggingLevel.ERROR, log, "Excepion occurred in Route. Exception : ${exception.message}")
+
+                .log(LoggingLevel.WARN, log, "${exception.stacktrace}")
+
+                .end();
         // TODO Auto-generated method stub
         from("timer://foo?fixedRate=true&period=900000").routeId("id_SampleRoute")
                 .log(LoggingLevel.INFO, log, "Timer Route Started")
